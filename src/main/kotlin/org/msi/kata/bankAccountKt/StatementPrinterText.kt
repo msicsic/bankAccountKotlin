@@ -1,8 +1,5 @@
-package com.msi.kata.bankaccount
+package org.msi.kata.bankAccountKt
 
-import org.msi.kata.bankAccountKt.Statement
-import org.msi.kata.bankAccountKt.StatementLine
-import org.msi.kata.bankAccountKt.StatementPrinter
 import java.io.PrintStream
 import java.time.format.DateTimeFormatter
 

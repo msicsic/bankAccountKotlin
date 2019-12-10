@@ -1,6 +1,5 @@
 package org.msi.kata.bankAccountKt
 
-import com.msi.kata.bankaccount.StatementPrinterText
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.jupiter.api.Test

@@ -1,6 +1,6 @@
 package org.msi.kata.acceptance
 
-import com.msi.kata.bankaccount.StatementPrinterText
+import org.msi.kata.bankAccountKt.StatementPrinterText
 import io.cucumber.datatable.DataTable
 import io.cucumber.java8.En
 import org.junit.jupiter.api.Assertions
