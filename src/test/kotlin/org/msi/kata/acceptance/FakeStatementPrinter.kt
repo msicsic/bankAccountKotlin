@@ -4,13 +4,14 @@ import org.msi.kata.bankAccountKt.Money
 import org.msi.kata.bankAccountKt.Statement
 import org.msi.kata.bankAccountKt.StatementPrinter
 
-class FakeStatementPrinter : StatementPrinter {
+class FakeStatementPrinter(val realPrinter: StatementPrinter) : StatementPrinter {
     var statement: Statement? = null
 
     fun getBalance(): Money = statement?.lines?.firstOrNull()?.balance ?: Money(0)
 
     override fun print(statement: Statement) {
         this.statement = statement
+        realPrinter.print(statement)
     }
 
 }
