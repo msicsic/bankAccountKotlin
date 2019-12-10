@@ -9,6 +9,10 @@ class Account(val history: OperationHistory) {
         history.add(Operation(amount, date))
     }
 
+    fun withdraw(amount: Money, date: LocalDateTime) {
+        history.add(Operation(amount.negate(), date))
+    }
+
     fun printStatement(printer: StatementPrinter) {
         printer.print(history.getStatement())
     }

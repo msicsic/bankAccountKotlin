@@ -25,6 +25,11 @@ class AccountStepDefinitions : En {
             account.deposit(Money(amount), date)
         }
 
+        When<Int>("I withdraw {int} Euros") { amount: Int ->
+            date = LocalDateTime.now()
+            account.withdraw(Money(amount), date)
+        }
+
         Then<Int>("My balance should be {int} Euros") { amount: Int ->
             account.printStatement(printer)
             Assertions.assertEquals(Money(amount), printer.getBalance())

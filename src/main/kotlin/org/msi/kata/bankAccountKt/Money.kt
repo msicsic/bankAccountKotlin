@@ -7,6 +7,7 @@ import java.math.BigDecimal
 data class Money(val amount: BigDecimal) {
 
     operator fun plus(amount: Money) = Money(this.amount + amount.amount)
+    fun negate() = Money(this.amount.negate())
 
     constructor(amount: Int) : this(amount.toBigDecimal())
 }

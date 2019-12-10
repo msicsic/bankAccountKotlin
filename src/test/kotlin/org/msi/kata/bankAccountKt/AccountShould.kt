@@ -59,4 +59,20 @@ internal class AccountShould {
         verify(printer).print(statement)
     }
 
+
+    @Test
+    fun `withdraw 100 added in history`() {
+        // GIVEN
+        val history = mock<OperationHistory>()
+        val account = Account(history)
+        val now = LocalDateTime.now()
+
+        // WHEN
+        account.withdraw(Money(100), now)
+
+        // THEN
+        verify(history).add(Operation(Money(-100), now))
+    }
+
+
 }
