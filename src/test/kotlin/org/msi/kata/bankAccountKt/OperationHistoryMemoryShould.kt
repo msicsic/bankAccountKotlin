@@ -11,7 +11,7 @@ internal class OperationHistoryMemoryShould {
         // GIVEN
         val history = OperationHistoryMemory()
         val now = LocalDateTime.now()
-        history.add(Operation(Money(100), now))
+        history.add(Money(100), now)
 
         // WHEN
         val statement = history.getStatement()
@@ -26,8 +26,8 @@ internal class OperationHistoryMemoryShould {
         // GIVEN
         val history = OperationHistoryMemory()
         val now = LocalDateTime.now()
-        history.add(Operation(Money(100), now))
-        history.add(Operation(Money(200), now))
+        history.add(Money(100), now)
+        history.add(Money(200), now)
 
         // WHEN
         val statement = history.getStatement()

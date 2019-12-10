@@ -21,7 +21,7 @@ internal class AccountShould {
         account.deposit(Money(100), now)
 
         // THEN
-        verify(history).add(Operation(Money(100), now))
+        verify(history).add(Money(100), now)
     }
 
     @Test
@@ -37,8 +37,8 @@ internal class AccountShould {
 
         // THEN
         inOrder(history) {
-            verify(history).add(Operation(Money(100), now))
-            verify(history).add(Operation(Money(200), now))
+            verify(history).add(Money(100), now)
+            verify(history).add(Money(200), now)
         }
     }
 
@@ -71,7 +71,7 @@ internal class AccountShould {
         account.withdraw(Money(100), now)
 
         // THEN
-        verify(history).add(Operation(Money(-100), now))
+        verify(history).add(Money(-100), now)
     }
 
 

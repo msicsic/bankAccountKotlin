@@ -6,11 +6,11 @@ import java.time.LocalDateTime
 @Entity
 class Account(val history: OperationHistory) {
     fun deposit(amount: Money, date: LocalDateTime) {
-        history.add(Operation(amount, date))
+        history.add(amount, date)
     }
 
     fun withdraw(amount: Money, date: LocalDateTime) {
-        history.add(Operation(amount.negate(), date))
+        history.add(amount.negate(), date)
     }
 
     fun printStatement(printer: StatementPrinter) {
