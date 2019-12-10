@@ -17,7 +17,7 @@ class OperationHistoryMemory : OperationHistory {
             balance += operation.amount
             lines.add(StatementLine(operation.type, operation.date, operation.amount, balance))
         }
-        return Statement(lines)
+        return Statement(lines.reversed())
     }
 
 }
