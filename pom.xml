@@ -113,7 +113,7 @@
                     </compilerPlugins>
 
                     <pluginOptions>
-                        <option>all-open:annotation=org.msi.kata.bankAccountKt.utils.Entity</option>
+                        <option>all-open:annotation=org.msi.kata.bankAccountKt.utils.AllOpen</option>
                     </pluginOptions>
 
                     <nowarn>true</nowarn>  <!-- Disable warnings -->

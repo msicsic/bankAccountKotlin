@@ -10,6 +10,7 @@ class Account(val history: OperationHistory) {
     }
 
     fun printStatement(printer: StatementPrinter) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        printer.print(history.getStatement())
     }
+
 }

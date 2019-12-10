@@ -1,5 +1,5 @@
 package org.msi.kata.bankAccountKt.utils
 
 @AllOpen
-annotation class Entity {
+annotation class Value {
 }

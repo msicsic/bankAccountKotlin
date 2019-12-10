@@ -1,10 +1,12 @@
 package org.msi.kata.bankAccountKt
 
+import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.inOrder
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
+
 
 internal class AccountShould {
 
@@ -38,7 +40,23 @@ internal class AccountShould {
             verify(history).add(Operation(Money(100), now))
             verify(history).add(Operation(Money(200), now))
         }
+    }
 
+    @Test
+    fun `print statement from history`() {
+        // GIVEN
+        val statement = mock<Statement>()
+        val printer = mock<StatementPrinter>()
+        val history = mock<OperationHistory>() {
+            on { getStatement() } doReturn statement
+        }
+        val account = Account(history)
+
+        // WHEN
+        account.printStatement(printer)
+
+        // THEN
+        verify(printer).print(statement)
     }
 
 }
